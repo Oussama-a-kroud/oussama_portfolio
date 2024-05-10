@@ -912,15 +912,7 @@ border-radius: 0.5rem;
     padding: 0 0.5rem;
   }
   
-  .about__buttons{
-    display: flex;
-    flex-direction: column;
-    
   
-  }
-  .button{
-    margin-top: 10px;
-  }
 }
 
 
