@@ -913,8 +913,8 @@ border-radius: 0.5rem;
   }
   
   .about__buttons{
-    display: block;
-   
+    display: flex;
+    flex-direction: column;
     
   
   }
