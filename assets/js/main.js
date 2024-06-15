@@ -1,5 +1,24 @@
 /*==================== MENU SHOW HIDDEN ====================*/
+var Btn = document.getElementById("btn");
+Btn.addEventListener("click", function (e) {
+  e.preventDefault();
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const subject = document.getElementById("subject").value;
+  const message = document.getElementById("message").value;
 
+     const body =" name: " + name + " <br/> email :" + email + "<br/> subject:" + subject + "<br/> message : "+message;
+    console.log(body)
+  Email.send({
+    Host : "smtp.elasticemail.com",
+    Username : "akroudoussama778@gmail.com",
+    Password : "gzSsXK$t9NV69XW",
+    To: "akroudoussama778@gmail.com",
+    From:document.getElementById('email').value,
+    Subject: "contact message",
+    Body: body
+  }).then((message) => alert(message));
+});
 /*===== MENU SHOW =====*/
 /* Validate if constant exists */
 const navMenu = document.getElementById("nav-menu"),
@@ -129,13 +148,12 @@ function scrollActive() {
 window.addEventListener("scroll", scrollActive);
 
 /*==================== CHANGE BACKGROUND HEADER ====================*/
-function scrollHeader(){
-    const nav = document.getElementById("header");
-    if (this.scrollY >=80) nav.classList.add("scroll-header");
-    else nav.classList.remove("scroll-header");
+function scrollHeader() {
+  const nav = document.getElementById("header");
+  if (this.scrollY >= 80) nav.classList.add("scroll-header");
+  else nav.classList.remove("scroll-header");
 }
-window.addEventListener("scroll",scrollHeader)
-
+window.addEventListener("scroll", scrollHeader);
 
 /*==================== SHOW SCROLL UP ====================*/
 function scrollUp() {
@@ -148,7 +166,7 @@ function scrollUp() {
 window.addEventListener("scroll", scrollUp);
 
 /*==================== DARK LIGHT THEME ====================*/
-const themeButton =document.getElementById("theme-button");
+const themeButton = document.getElementById("theme-button");
 const darkTheme = "dark-theme";
 const iconTheme = "uil-sun";
 
@@ -156,27 +174,26 @@ const selectedTheme = localStorage.getItem("selected-theme");
 const selectedIcon = localStorage.getItem("selected-icon");
 
 const getCurrentTheme = () => {
-    document.body.classList.contains(darkTheme)? "dark" : "light";
+  document.body.classList.contains(darkTheme) ? "dark" : "light";
 };
 
 const getCurrentIcon = () => {
-    themeButton.classList.contains(iconTheme) ? "uil-miin" : "uil-sun";
+  themeButton.classList.contains(iconTheme) ? "uil-miin" : "uil-sun";
 };
 
 if (selectedTheme) {
-    document.body.classList[selectedTheme === "dark" ? "add" : "remove"](
-        darkTheme
-    );
-    themeButton.classList[selectedIcon === 'uil-moon' ? "add" : "remove"](
-        iconTheme
-    );
+  document.body.classList[selectedTheme === "dark" ? "add" : "remove"](
+    darkTheme
+  );
+  themeButton.classList[selectedIcon === "uil-moon" ? "add" : "remove"](
+    iconTheme
+  );
 }
 
-
 themeButton.addEventListener("click", () => {
-    document.body.classList.toggle(darkTheme);
-    themeButton.classList.toggle(iconTheme);
+  document.body.classList.toggle(darkTheme);
+  themeButton.classList.toggle(iconTheme);
 
-    localStorage.setItem("selecter-theme",getCurrentTheme);
-    localStorage.setItem("selecter-icon",getCurrentIcon);
-})
+  localStorage.setItem("selecter-theme", getCurrentTheme);
+  localStorage.setItem("selecter-icon", getCurrentIcon);
+});
