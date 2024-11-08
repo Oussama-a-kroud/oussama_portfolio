@@ -1,24 +1,24 @@
 /*==================== MENU SHOW HIDDEN ====================*/
-var Btn = document.getElementById("btn");
-Btn.addEventListener("click", function (e) {
-  e.preventDefault();
-  const name = document.getElementById("name").value;
-  const email = document.getElementById("email").value;
-  const subject = document.getElementById("subject").value;
-  const message = document.getElementById("message").value;
+// var Btn = document.getElementById("btn");
+// Btn.addEventListener("click", function (e) {
+//   e.preventDefault();
+//   const name = document.getElementById("name").value;
+//   const email = document.getElementById("email").value;
+//   const subject = document.getElementById("subject").value;
+//   const message = document.getElementById("message").value;
 
-     const body =" name: " + name + " <br/> email :" + email + "<br/> subject:" + subject + "<br/> message : "+message;
-    console.log(body)
-  Email.send({
-    Host : "smtp.elasticemail.com",
-    Username : "akroudoussama778@gmail.com",
-    Password : "gzSsXK$t9NV69XW",
-    To: "akroudoussama778@gmail.com",
-    From:document.getElementById('email').value,
-    Subject: "contact message",
-    Body: body
-  }).then((message) => alert(message));
-});
+//      const body =" name: " + name + " <br/> email :" + email + "<br/> subject:" + subject + "<br/> message : "+message;
+//     console.log(body)
+//   Email.send({
+//     Host : "smtp.elasticemail.com",
+//     Username : "akroudoussama778@gmail.com",
+//     Password : "gzSsXK$t9NV69XW",
+//     To: "akroudoussama778@gmail.com",
+//     From:document.getElementById('email').value,
+//     Subject: "contact message",
+//     Body: body
+//   }).then((message) => alert(message));
+// });
 /*===== MENU SHOW =====*/
 /* Validate if constant exists */
 const navMenu = document.getElementById("nav-menu"),
