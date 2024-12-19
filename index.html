@@ -737,7 +737,26 @@
     <!--==================== Contact Validation ====================-->
 <!--     <script src="https://smtpjs.com/v3/smtp.js"> -->
 
-    
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+          event.preventDefault();
+          
+          emailjs.send("service_id", "template_id", {
+            from_name: this.from_name.value,
+            from_email: this.from_email.value,
+            project: this.project.value,
+            message: this.message.value,
+          })
+          .then(function() {
+            alert('Message sent successfully!');
+            document.getElementById('contactForm').reset();
+          }, function(error) {
+            alert('Failed to send message. Please try again.');
+          });
+        });
+      </script>
+      
+    </script>
     </script>
   </body>
 </html>
